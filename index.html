@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - NOXCORES Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary-color: #7209b7;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--dark-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .app-icon {
+            background: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .app-icon i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .app-info h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        
+        .app-tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 1.8rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-info p {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .contact-email:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Content Layout */
+        .content-wrapper {
+            display: flex;
+            margin: 2.5rem 0;
+            gap: 2.5rem;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            flex: 0 0 280px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem 1.8rem;
+            box-shadow: var(--box-shadow);
+            height: fit-content;
+            position: sticky;
+            top: 2.5rem;
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-links {
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .nav-links a i {
+            color: var(--gray-color);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background-color: rgba(67, 97, 238, 0.08);
+            color: var(--primary-color);
+        }
+        
+        .nav-links a:hover i, .nav-links a.active i {
+            color: var(--primary-color);
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2.8rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .policy-notice {
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.08) 0%, rgba(114, 9, 183, 0.05) 100%);
+            padding: 1.8rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2.5rem;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .notice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
+        
+        .app-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .update-date {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-color);
+            font-weight: 500;
+        }
+        
+        .notice-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .notice-icon {
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .notice-text p {
+            margin-bottom: 1rem;
+        }
+        
+        .policy-section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 20px;
+        }
+        
+        .policy-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.8rem;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .section-icon {
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        
+        .section-header h2 {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+        }
+        
+        .policy-section h3 {
+            color: var(--secondary-color);
+            margin: 1.8rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .policy-section p {
+            margin-bottom: 1.2rem;
+            color: #444;
+        }
+        
+        .policy-section ul, .policy-section ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .policy-section li {
+            margin-bottom: 0.8rem;
+            color: #444;
+        }
+        
+        .feature-highlight {
+            background-color: rgba(247, 37, 133, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 1.8rem 0;
+        }
+        
+        .feature-highlight h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.8rem 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .data-table th, .data-table td {
+            border: 1px solid var(--light-gray);
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .data-table th {
+            background-color: rgba(67, 97, 238, 0.08);
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+        
+        .data-table tr:hover {
+            background-color: rgba(67, 97, 238, 0.03);
+        }
+        
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 0.5rem 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copyright {
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+        
+        .app-commitment {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 1.8rem;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: static;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .main-content {
+                padding: 1.8rem;
+            }
+            
+            .notice-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .notice-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .footer-links a {
+                margin: 0 0.9rem;
+            }
+            
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="app-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="app-info">
+                        <h1>NOXCORES</h1>
+                        <p class="app-tagline">Secure Password Generator - Privacy Policy</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <p>For privacy-related inquiries, contact:</p>
+                    <a href="mailto:np5065@gmail.com" class="contact-email">
+                        <i class="fas fa-envelope"></i> np5065@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content-wrapper">
+            <nav class="sidebar">
+                <h3><i class="fas fa-file-contract"></i> Policy Contents</h3>
+                <ul class="nav-links">
+                    <li><a href="#introduction" class="active"><i class="fas fa-info-circle"></i> Introduction</a></li>
+                    <li><a href="#no-data-collection"><i class="fas fa-ban"></i> No Data Collection</a></li>
+                    <li><a href="#local-storage"><i class="fas fa-laptop-house"></i> Local-Only Storage</a></li>
+                    <li><a href="#generated-passwords"><i class="fas fa-key"></i> Generated Passwords</a></li>
+                    <li><a href="#permissions"><i class="fas fa-user-check"></i> App Permissions</a></li>
+                    <li><a href="#security"><i class="fas fa-shield-alt"></i> Security</a></li>
+                    <li><a href="#third-party"><i class="fas fa-external-link-alt"></i> Third-Party Services</a></li>
+                    <li><a href="#children"><i class="fas fa-child"></i> Children's Privacy</a></li>
+                    <li><a href="#changes"><i class="fas fa-history"></i> Policy Changes</a></li>
+                    <li><a href="#contact"><i class="fas fa-headset"></i> Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <main class="main-content">
+                <div class="policy-notice">
+                    <div class="notice-header">
+                        <div class="app-badge">NOXCORES Password Generator</div>
+                        <div class="update-date">
+                            <i class="fas fa-calendar-alt"></i> 
+                            <span>Last Updated: January 8, 2026</span>
+                        </div>
+                    </div>
+                    <div class="notice-content">
+                        <div class="notice-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="notice-text">
+                            <p>This Privacy Policy explains how the <strong>NOXCORES Password Generator</strong> application handles your information. We are committed to protecting your privacy and maintaining the highest standards of data security.</p>
+                            <p><strong>Important:</strong> NOXCORES is an <strong>offline application</strong> that operates entirely on your device. We do not collect, transmit, or store any of your data on external servers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-section" id="introduction">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h2>1. Introduction</h2>
+                    </div>
+                    <p>Welcome to <strong>NOXCORES Password Generator</strong> ("we," "our," or "us"). This Privacy Policy describes our practices regarding information when you use our password generator application.</p>
+                    <p>NOXCORES is designed with privacy as a core principle. Unlike many applications, we are committed to a <strong>zero-data-collection</strong> approach. This means we do not collect, store, or transmit any personal information or usage data from your device.</p>
+                    
+                    <div class="feature-highlight">
+                        <h4><i class="fas fa-mobile-alt"></i> Offline-First Design</h4>
+                        <p>NOXCORES is built to function completely offline. All password generation, strength assessment, and storage occur locally on your device. No internet connection is required for core functionality, and no data leaves your device without your explicit permission.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-section" id="no-data-collection">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h2>2. No Data Collection Policy</h2>
+                    </div>
+                    <p>NOXCORES adheres to a strict no-data-collection policy. Specifically:</p>
+                    
+                    <h3>What We Do NOT Collect:</h3>
+                    <ul>
+                        <li><strong>Personal Information:</strong> We do not collect names, email addresses, or any identifying information</li>
+                        <li><strong>Generated Passwords:</strong> Passwords created by the app remain exclusively on your device</li>
+                        <li><strong>Usage Data:</strong> We do not track how you use the application, which features you access, or your preferences</li>
+                        <li><strong>Device Information:</strong> We do not collect device identifiers, IP addresses, or location data</li>
+                        <li><strong>Analytics:</strong> We do not use analytics or tracking tools that monitor your behavior</li>
+                    </ul>
+                    
+                    <h3>Application Functionality:</h3>
+                    <p>All functionality of NOXCORES operates entirely locally on your device:</p>
+                    <ul>
+                        <li>Password generation algorithms run locally</li>
+                        <li>Strength assessment and entropy calculations are performed on-device</li>
+                        <li>Template storage and password history are saved only to your device's local storage</li>
+                        <li>No external servers or cloud services are used for core functionality</li>
+                    </ul>
+                    
+                    <div class="privacy-badge">
+                        <i class="fas fa-user-secret"></i> 100% Private - No Data Collection
+                    </div>
+                </div>
+                
+                <div class="policy-section" id="local-storage">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <h2>3. Local-Only Storage</h2>
+                    </div>
+                    <p>NOXCORES stores data exclusively on your device using local storage mechanisms. This includes:</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Data Type</th>
+                                <th>Purpose</th>
+                                <th>Storage Location</th>
+                                <th>Access</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Password History</td>
+                                <td>Record of previously generated passwords for your convenience</td>
+                                <td>Device localStorage/IndexedDB</td>
+                                <td>Only accessible within the app</td>
+                            </tr>
+                            <tr>
+                                <td>Saved Templates</td>
+                                <td>Custom password generation rules for reuse</td>
+                                <td>Device localStorage</td>
+                                <td>Only accessible within the app</td>
+                            </tr>
+                            <tr>
+                                <td>Favorites</td>
+                                <td>Passwords you've marked as favorites</td>
+                                <td>Device localStorage</td>
+                                <td>Only accessible within the app</td>
+                            </tr>
+                            <tr>
+                                <td>App Settings</td>
+                                <td>Your preferences for password generation rules</td>
+                                <td>Device localStorage</td>
+                                <td>Only accessible within the app</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Data Control</h3>
+                    <p>You have complete control over all data stored by NOXCORES:</p>
+                    <ul>
+                        <li>Clear password history at any time through the app interface</li>
+                        <li>Delete individual passwords or templates</li>
+                        <li>Export your password data (if you choose to enable this optional feature)</li>
+                        <li>Uninstalling the app removes all locally stored data</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section" id="generated-passwords">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h2>4. Generated Passwords</h2>
+                    </div>
+                    <p>Your generated passwords are handled with the utmost security:</p>
+                    
+                    <h3>Password Generation</h3>
+                    <p>Passwords are generated using cryptographically secure random number generators implemented locally on your device. The generation process includes:</p>
+                    <ul>
+                        <li>Cryptographically secure randomness sources</li>
+                        <li>Configurable character sets (uppercase, lowercase, numbers, symbols)</li>
+                        <li>Exclusion of ambiguous characters (optional)</li>
+                        <li>Real-time strength and entropy assessment</li>
+                    </ul>
+                    
+                    <h3>Password Storage</h3>
+                    <p>If you choose to save passwords within the app:</p>
+                    <ul>
+                        <li>Passwords are stored only in your device's local storage</li>
+                        <li>No encryption is applied (as the data never leaves your device)</li>
+                        <li>You can delete saved passwords at any time</li>
+                        <li>We recommend not storing highly sensitive passwords in the app history</li>
+                    </ul>
+                    
+                    <div class="feature-highlight">
+                        <h4><i class="fas fa-clipboard-check"></i> Copy to Clipboard</h4>
+                        <p>When you use the "Copy to Clipboard" feature, the password is transferred to your device's clipboard. This is a standard operating system function, and we have no control over how other applications might access the clipboard. We recommend clearing your clipboard after pasting sensitive passwords.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-section" id="permissions">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h2>5. Application Permissions</h2>
+                    </div>
+                    <p>NOXCORES requests minimal permissions to function:</p>
+                    
+                    <h3>Required Permissions</h3>
+                    <ul>
+                        <li><strong>Clipboard Access:</strong> Required for the "Copy to Clipboard" functionality to copy generated passwords</li>
+                        <li><strong>Local Storage:</strong> Required to save your preferences, templates, and password history locally on your device</li>
+                    </ul>
+                    
+                    <h3>Permissions We Do NOT Request</h3>
+                    <ul>
+                        <li><strong>Internet Access:</strong> Not required for app functionality</li>
+                        <li><strong>Location Services:</strong> Not requested or used</li>
+                        <li><strong>Device Identifiers:</strong> Not accessed or collected</li>
+                        <li><strong>Contacts/Photos/Files:</strong> Not accessed unless you explicitly use export/import features</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section" id="security">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h2>6. Security Practices</h2>
+                    </div>
+                    <p>While NOXCORES operates entirely offline, we implement security best practices:</p>
+                    
+                    <h3>Code Security</h3>
+                    <p>The application is built following secure coding practices:</p>
+                    <ul>
+                        <li>Use of cryptographically secure random number generation</li>
+                        <li>No external dependencies on untrusted libraries</li>
+                        <li>Regular code reviews for security vulnerabilities</li>
+                    </ul>
+                    
+                    <h3>User Security Recommendations</h3>
+                    <p>To maximize your security when using password generators:</p>
+                    <ul>
+                        <li>Use the "Exclude ambiguous characters" option to avoid confusing characters</li>
+                        <li>Generate passwords with sufficient length and complexity for your needs</li>
+                        <li>Regularly clear your password history if storing sensitive passwords</li>
+                        <li>Be mindful of clipboard usage when copying passwords</li>
+                        <li>Consider using a password manager for storing important passwords</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section" id="third-party">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                        <h2>7. Third-Party Services</h2>
+                    </div>
+                    <p>NOXCORES is designed to operate independently without third-party services:</p>
+                    
+                    <h3>No Third-Party Integrations</h3>
+                    <p>The core application contains no:</p>
+                    <ul>
+                        <li>Advertising networks or trackers</li>
+                        <li>Analytics or telemetry services</li>
+                        <li>Cloud synchronization services</li>
+                        <li>Social media integrations</li>
+                        <li>External APIs or web services</li>
+                    </ul>
+                    
+                    <h3>Optional Export Feature</h3>
+                    <p>If you choose to export your password data:</p>
+                    <ul>
+                        <li>Export is initiated manually by you</li>
+                        <li>Data is exported to a location of your choice on your device</li>
+                        <li>No automatic uploading or sharing occurs</li>
+                        <li>You are responsible for securing exported files</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section" id="children">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h2>8. Children's Privacy</h2>
+                    </div>
+                    <p>NOXCORES is a general audience application. We do not knowingly collect any personal information from children under 13 because we do not collect any personal information from anyone.</p>
+                    <p>Since the application operates entirely offline and collects no data, there are no specific restrictions or requirements for children's use beyond those that apply to all users.</p>
+                </div>
+                
+                <div class="policy-section" id="changes">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h2>9. Changes to This Privacy Policy</h2>
+                    </div>
+                    <p>We may update this Privacy Policy from time to time. Any changes will be posted in the application or on our website (if applicable).</p>
+                    
+                    <h3>Update Notification</h3>
+                    <p>Since NOXCORES operates offline:</p>
+                    <ul>
+                        <li>Major updates to the application may include updated privacy policies</li>
+                        <li>You will be prompted to review the updated policy when updating the app</li>
+                        <li>Continued use of the application after updates constitutes acceptance of the updated policy</li>
+                    </ul>
+                    
+                    <h3>Policy History</h3>
+                    <ul>
+                        <li><strong>January 8, 2026:</strong> Initial Privacy Policy published</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section" id="contact">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h2>10. Contact Us</h2>
+                    </div>
+                    <p>If you have any questions or concerns about this Privacy Policy or NOXCORES, please contact us:</p>
+                    
+                    <div class="feature-highlight">
+                        <h4><i class="fas fa-envelope"></i> Primary Contact</h4>
+                        <p><strong>Email:</strong> <a href="mailto:np5065@gmail.com">np5065@gmail.com</a></p>
+                        <p>Please include "NOXCORES Privacy Policy" in the subject line for faster response.</p>
+                    </div>
+                    
+                    <h3>Response Time</h3>
+                    <p>We strive to respond to all privacy-related inquiries within 5 business days.</p>
+                    
+                    <div class="privacy-badge">
+                        <i class="fas fa-lock"></i> Privacy-First Design
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2026 NOXCORES Password Generator. All rights reserved.</p>
+                    <p>This application respects your privacy and operates entirely on your device.</p>
+                </div>
+                <div class="app-commitment">
+                    <i class="fas fa-user-shield"></i>
+                    <span>100% Offline • No Data Collection</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#introduction">Privacy Policy</a>
+                    <a href="#" onclick="alert('Terms of Service would be linked here'); return false;">Terms of Service</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Update active link in sidebar
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight current section in sidebar on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.policy-section');
+            const sidebarLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentSection = '';
+            const scrollPosition = window.scrollY + 150;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if(scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // If at top, highlight introduction
+            if(scrollPosition < 200) {
+                sidebarLinks.forEach(link => link.classList.remove('active'));
+                document.querySelector('.nav-links a[href="#introduction"]').classList.add('active');
+            }
+        });
+        
+        // Set current year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.querySelector('.copyright p');
+            if(yearElement) {
+                yearElement.innerHTML = yearElement.innerHTML.replace('2026', new Date().getFullYear());
+            }
+            
+            // Initialize with introduction active
+            document.querySelector('.nav-links a[href="#introduction"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>
